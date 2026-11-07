@@ -1,0 +1,78 @@
+/* Nemesis Terminal - estilos base (paleta provisional) */
+:root {
+  --fondo: #0e1220;
+  --panel: #151b2e;
+  --panel-2: #1b2340;
+  --borde: #262f4d;
+  --texto: #e6e9f2;
+  --tenue: #8a93ad;
+  --acento: #4f7cff;
+  --acento-2: #22c3a6;
+  --radio: 10px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+}
+
+/* ---- Barra lateral ---- */
+.lateral {
+  width: 250px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border-right: 1px solid var(--borde);
+  padding: 18px 12px;
+}
+
+.marca { display: flex; align-items: center; gap: 10px; padding: 0 8px 18px; border-bottom: 1px solid var(--borde); }
+.marca-icono {
+  width: 38px; height: 38px; border-radius: 9px;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--acento), var(--acento-2));
+  font-weight: 800; font-size: 20px; color: #fff;
+}
+.marca-nombre { font-weight: 800; letter-spacing: 2px; }
+.marca-sub { font-size: 11px; letter-spacing: 4px; color: var(--acento); }
+
+.menu { flex: 1; margin-top: 14px; overflow-y: auto; }
+.menu-grupo { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--tenue); padding: 14px 10px 6px; }
+.menu a {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 9px 10px; margin-bottom: 2px; border-radius: 8px;
+  color: var(--tenue); text-decoration: none;
+}
+.menu a:hover { background: var(--panel-2); color: var(--texto); }
+.menu a.activa { background: rgba(79, 124, 255, 0.15); color: var(--texto); box-shadow: inset 3px 0 0 var(--acento); }
+.tecla { font-size: 11px; padding: 1px 6px; border: 1px solid var(--borde); border-radius: 5px; color: var(--tenue); }
+
+.version { font-size: 12px; color: var(--tenue); padding: 10px 8px 0; border-top: 1px solid var(--borde); }
+
+/* ---- Contenido ---- */
+.contenido { flex: 1; display: flex; flex-direction: column; }
+.barra {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 28px; border-bottom: 1px solid var(--borde); background: var(--panel);
+}
+.barra h1 { font-size: 20px; font-weight: 600; }
+.estado { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--tenue); }
+.punto { width: 9px; height: 9px; border-radius: 50%; background: var(--tenue); }
+.punto.ok { background: var(--acento-2); }
+.punto.error { background: #e5484d; }
+
+.vista { flex: 1; padding: 28px; }
+.vacia {
+  height: 100%; min-height: 320px;
+  display: grid; place-items: center; text-align: center;
+  border: 2px dashed var(--borde); border-radius: var(--radio);
+  color: var(--tenue);
+}
+.vacia h2 { color: var(--texto); font-size: 18px; margin-bottom: 6px; }
